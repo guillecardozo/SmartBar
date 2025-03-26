@@ -1,11 +1,8 @@
-﻿using Contracts;
+﻿using AutoMapper;
+using Contracts;
 using Entities.Models;
 using Service.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Shared.DTOs;
 
 namespace Service
 {
@@ -13,19 +10,24 @@ namespace Service
     {
         private readonly IRepositoryManager _repository; 
         private readonly ILoggerManager _logger;
+        private readonly IMapper _mapper;
 
-        public ProductoService(IRepositoryManager repository, ILoggerManager logger)
+        public ProductoService(IRepositoryManager repository, ILoggerManager logger, IMapper mapper)
         {
             _repository = repository;
             _logger = logger;
+            _mapper = mapper;
         }
 
-        public IEnumerable<Producto> GetProductos(bool trackChanges) 
+        public IEnumerable<ProductoDTO> GetProductos(bool trackChanges) 
         { 
             try 
             { 
-                IEnumerable<Producto> productos = _repository.Producto.GetProductos(trackChanges); 
-                return productos; 
+                IEnumerable<Producto> productos = _repository.Producto.GetProductos(trackChanges);
+
+                IEnumerable<ProductoDTO> productosDto = _mapper.Map<IEnumerable<ProductoDTO>>(productos);
+
+                return productosDto;
             } 
             catch (Exception ex) 
             { 

@@ -1,4 +1,5 @@
-﻿using Contracts;
+﻿using AutoMapper;
+using Contracts;
 using Service.Contracts;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,9 @@ namespace Service
     public sealed class ServiceManager : IServiceManager
     {
         private readonly Lazy<IProductoService> _productoService;
-        public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager logger)
+        public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager logger, IMapper mapper)
         {
-            _productoService = new Lazy<IProductoService>(() => new ProductoService(repositoryManager, logger));
+            _productoService = new Lazy<IProductoService>(() => new ProductoService(repositoryManager, logger, mapper));
         }
         public IProductoService ProductoService => _productoService.Value;
     }

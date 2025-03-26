@@ -1,11 +1,6 @@
-﻿using Entities.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Shared.DTOs;
 
 namespace SmartBar.Presentation.Controllers
 {
@@ -20,7 +15,7 @@ namespace SmartBar.Presentation.Controllers
         { 
             try 
             { 
-                IEnumerable<Producto> productos = _service.ProductoService.GetProductos(trackChanges: false); 
+                IEnumerable<ProductoDTO> productos = _service.ProductoService.GetProductos(trackChanges: false); 
                 return Ok(productos); 
             } 
             catch 
