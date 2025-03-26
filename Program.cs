@@ -14,7 +14,7 @@ builder.Services.ConfigureSqlContext(builder.Configuration);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddApplicationPart(typeof(SmartBar.Presentation.AssemblyReference).Assembly);
 
 var app = builder.Build();
 
