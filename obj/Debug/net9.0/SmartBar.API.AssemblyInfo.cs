@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartBar.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37dfc6667d00580f08f5dc08f86612b762987466")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5867548eea905808c86044cc54d2e4894ecc5f91")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartBar.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartBar.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
