@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SmartBar.API.props" />
+</Project>
